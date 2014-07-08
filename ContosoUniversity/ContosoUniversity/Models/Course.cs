@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
 namespace ContosoUniversity.Models
 {
-    class Course
+    public class Course
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]         
         public int CourseID { get; set; }        
