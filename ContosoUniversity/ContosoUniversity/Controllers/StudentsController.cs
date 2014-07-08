@@ -45,18 +45,25 @@ namespace ContosoUniversity.Controllers
         // POST: Students/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,LastName,FirstMidName,EnrollmentDate")] Student student)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Students.Add(student);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(student);
+        [HttpPost] 
+[ValidateAntiForgeryToken] 
+        public ActionResult Create([Bind(Include = "LastName, FirstMidName, EnrollmentDate")]Student student)
+        {     
+            try    
+            {        
+                if (ModelState.IsValid)        
+                {             
+                    db.Students.Add(student);             
+                    db.SaveChanges();             
+                    return RedirectToAction("Index");        
+                }     
+            }     
+            catch (DataException /* dex */)     
+            {        
+                //Log the error (uncomment dex variable name and add a line here to write a log.         
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");     
+            }     
+            return View(student); 
         }
 
         // GET: Students/Edit/5
