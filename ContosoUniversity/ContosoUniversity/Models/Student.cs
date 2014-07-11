@@ -8,8 +8,6 @@ namespace ContosoUniversity.Models
     public class Student     
     {         
         public int ID { get; set; }
-<<<<<<< HEAD
-<<<<<<< HEAD
         [Required] 
         [StringLength(50, MinimumLength=1)]
         [Display(Name = "Last Name")] 
@@ -34,21 +32,5 @@ namespace ContosoUniversity.Models
             } 
         }
         public virtual ICollection<Enrollment> Enrollments { get; set; }
-=======
-=======
->>>>>>> origin/master
-        [StringLength(50)] 
-        public string LastName { get; set; }
-        [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
-        [Column("FirstName")]
-        public string FirstMidName { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)] 
-        public DateTime EnrollmentDate { get; set; }                 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }     
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
     } 
 }

@@ -1,21 +1,14 @@
-<<<<<<< HEAD
+
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
->>>>>>> origin/master
+﻿
 
 namespace ContosoUniversity.Models
 {
     public class Course
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]         
-<<<<<<< HEAD
         [Display(Name = "Number")]
         public int CourseID { get; set; }  
       
@@ -27,15 +20,9 @@ namespace ContosoUniversity.Models
 
         public int DepartmentID { get; set; }
 
-        public virtual Department Department (get; set;)
+        public virtual Department Department {get; set;}
         public virtual ICollection<Enrollment> Enrollments { get; set; } 
         public virtual ICollection<Instructor> Instructors {get; set;}
 
-=======
-        public int CourseID { get; set; }        
-        public string Title { get; set; }         
-        public int Credits { get; set; }                  
-        public virtual ICollection<Enrollment> Enrollments { get; set; }    
->>>>>>> origin/master
     } 
 } 
